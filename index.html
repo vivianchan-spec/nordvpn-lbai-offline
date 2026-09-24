@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>領取 NordVPN 1 個月｜LongbridgeAI</title>
+<meta name="description" content="LongbridgeAI 活動專屬：免費領取 NordVPN 1 個月序號">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="assets/lbai-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --lbai-green: #00DBB6;
+    --lbai-green-35: #A8F2E4;
+    --lbai-orange: #FC5200;
+    --lbai-yellow-35: #FFF5A8;
+    --black: #000;
+    --white: #fff;
+    --mute: #535353;
+    --hairline: #E5E5E5;
+    --surface: #F6F6F6;
+    --font: "Cera Pro", "DM Sans", "Noto Sans TC", "PingFang HK", "Helvetica Neue", Arial, sans-serif;
+    --mono: "DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { font-family: var(--font); background: var(--white); color: var(--black); line-height: 1.55; }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 20px 16px 48px; }
+
+  header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; }
+  header img.lbai { height: 26px; width: auto; display: block; }
+
+  .hero { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+  .hero-text { flex: 1; min-width: 0; }
+  .eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .04em; background: var(--black); color: var(--white); padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
+  h1 { font-size: 26px; line-height: 1.25; font-weight: 700; }
+  h1 .hl { box-shadow: inset 0 -0.38em 0 var(--lbai-green-35); }
+  .hero img.nord { width: 92px; height: auto; flex-shrink: 0; }
+  .lead { color: var(--mute); font-size: 15px; margin-bottom: 20px; }
+
+  .card { border: 1px solid var(--hairline); border-radius: 16px; padding: 20px; }
+  label { display: block; font-size: 14px; font-weight: 700; margin: 0 0 6px; }
+  .field { margin-bottom: 16px; }
+  input, select { font: inherit; font-size: 16px; color: var(--black); background: var(--white); border: 1px solid #CFCFCF; border-radius: 10px; height: 48px; padding: 0 14px; width: 100%; outline: none; }
+  input:focus, select:focus { border-color: var(--black); box-shadow: 0 0 0 3px var(--lbai-green-35); }
+  .phone { display: flex; gap: 8px; }
+  .phone select { width: 104px; flex-shrink: 0; padding-right: 6px; }
+  .err { color: #C94100; font-size: 13px; margin-top: 6px; display: none; }
+  .field.invalid input { border-color: #C94100; }
+  .field.invalid .err { display: block; }
+  .speaker-chip { display: inline-block; font-size: 15px; font-weight: 700; background: var(--lbai-green-35); color: var(--black); padding: 6px 14px; border-radius: 999px; }
+  .consent { font-size: 12px; color: var(--mute); margin: 4px 0 16px; }
+
+  .btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; height: 52px; border-radius: 12px; border: 0; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; text-decoration: none; }
+  .btn-primary { background: var(--black); color: var(--white); }
+  .btn-primary:disabled { opacity: .5; cursor: default; }
+  .btn-green { background: var(--lbai-green); color: var(--black); }
+  .btn-ghost { background: var(--white); color: var(--black); border: 1px solid var(--black); }
+  .notice { margin-top: 12px; font-size: 14px; padding: 12px 14px; border-radius: 10px; background: var(--surface); display: none; }
+  .notice.show { display: block; }
+
+  /* 結果卡 */
+  .result { display: none; }
+  .result.show { display: block; }
+  .shot { background: var(--lbai-yellow-35); border-radius: 10px; padding: 10px 14px; font-size: 14px; font-weight: 700; margin-bottom: 12px; text-align: center; }
+  .voucher { background: var(--black); color: var(--white); border-radius: 16px; padding: 22px 20px; position: relative; overflow: hidden; }
+  .voucher::after { content: ""; position: absolute; right: -40px; top: -40px; width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(circle, rgba(0,219,182,.45), rgba(0,219,182,0) 70%); }
+  .voucher .v-top { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; opacity: .8; }
+  .voucher .v-title { font-size: 20px; font-weight: 700; margin: 6px 0 16px; }
+  .voucher .v-label { font-size: 12px; color: var(--lbai-green); font-weight: 700; letter-spacing: .06em; }
+  .voucher .v-code { font-family: var(--mono); font-size: 22px; letter-spacing: .04em; word-break: break-all; margin: 4px 0 16px; user-select: all; }
+  .voucher .v-meta { border-top: 1px dashed rgba(255,255,255,.3); padding-top: 12px; font-size: 13px; opacity: .85; display: grid; gap: 2px; }
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .redeem-url { font-size: 13px; color: var(--mute); text-align: center; margin-top: 10px; word-break: break-all; }
+
+  /* 指南 */
+  .tabs { display: flex; border-bottom: 1px solid var(--hairline); margin: 32px 0 16px; }
+  .tab { flex: 1; background: none; border: 0; font: inherit; font-size: 15px; font-weight: 700; color: var(--mute); padding: 12px 0; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  .tab[aria-selected="true"] { color: var(--black); border-bottom-color: var(--black); }
+  .panel { display: none; }
+  .panel.show { display: block; }
+  .steps { list-style: none; display: grid; gap: 14px; }
+  .steps li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
+  .steps .n { width: 28px; height: 28px; border-radius: 50%; background: var(--lbai-green); color: var(--black); font-weight: 700; font-size: 14px; display: grid; place-items: center; flex-shrink: 0; }
+  .steps a { color: var(--black); font-weight: 700; }
+  .terms { padding-left: 18px; font-size: 13px; color: var(--mute); display: grid; gap: 6px; }
+  footer { margin-top: 32px; font-size: 12px; color: var(--mute); text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img class="lbai" src="assets/lbai-logo.png" alt="LongbridgeAI">
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <span class="eyebrow">活動專屬禮遇</span>
+      <h1>免費領取<br><span class="hl">NordVPN 1 個月</span></h1>
+    </div>
+    <img class="nord" src="assets/nordvpn-logo.png" alt="NordVPN">
+  </section>
+
+  <!-- 表單 -->
+  <section id="formView">
+    <p class="lead">輸入電郵地址及手機號碼，即可領取 NordVPN 1 個月免費序號。</p>
+    <form class="card" id="form" novalidate>
+      <div class="field" id="fEmail">
+        <label for="email">電郵地址</label>
+        <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" required>
+        <div class="err">請輸入有效的電郵地址</div>
+      </div>
+      <div class="field" id="fPhone">
+        <label for="phone">手機號碼</label>
+        <div class="phone">
+          <select id="cc" aria-label="國家／地區區號">
+            <option value="+852" selected>🇭🇰 +852</option>
+            <option value="+853">🇲🇴 +853</option>
+            <option value="+86">🇨🇳 +86</option>
+            <option value="+886">🇹🇼 +886</option>
+            <option value="+65">🇸🇬 +65</option>
+            <option value="+60">🇲🇾 +60</option>
+            <option value="+44">🇬🇧 +44</option>
+            <option value="+1">🇺🇸 +1</option>
+          </select>
+          <input id="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="9123 4567" required>
+        </div>
+        <div class="err">請輸入有效的手機號碼</div>
+      </div>
+      <div class="field" id="fSpeaker">
+        <label for="speaker">活動講者 <span style="font-weight:400;color:var(--mute)">（選填）</span></label>
+        <input id="speaker" type="text" maxlength="50" autocomplete="off" placeholder="例如：Elvin，冇可留空">
+      </div>
+      <div class="field speaker-fixed" id="fSpeakerFixed" hidden>
+        <label>活動講者</label>
+        <div class="speaker-chip" id="speakerName"></div>
+      </div>
+      <p class="consent">每個電郵地址及手機號碼只可領取一次。提交即表示你同意 LongbridgeAI 收集以上資料作是次活動用途。</p>
+      <button class="btn btn-primary" id="submit" type="submit">領取序號</button>
+      <div class="notice" id="notice" role="status"></div>
+    </form>
+  </section>
+
+  <!-- 結果 -->
+  <section class="result" id="resultView" aria-live="polite">
+    <div class="shot">📸 請截圖保存此畫面</div>
+    <div class="voucher">
+      <div class="v-top"><span>LongbridgeAI × NordVPN</span><span id="rTag">已領取</span></div>
+      <div class="v-title">NordVPN 1 個月免費使用</div>
+      <div class="v-label">兌換序號</div>
+      <div class="v-code" id="rCode">—</div>
+      <div class="v-meta">
+        <span id="rExpiry"></span>
+        <span id="rEmail"></span>
+        <span id="rTime"></span>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn btn-ghost" id="copy" type="button">複製序號</button>
+      <a class="btn btn-green" id="redeem" target="_blank" rel="noopener">前往兌換 →</a>
+    </div>
+    <p class="redeem-url">兌換網址：<span id="rUrl"></span></p>
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-panel="pSteps">兌換步驟</button>
+    <button class="tab" role="tab" aria-selected="false" data-panel="pTerms">條款及細則</button>
+  </nav>
+  <section class="panel show" id="pSteps">
+    <ol class="steps">
+      <li><span class="n">1</span><span>填寫電郵及手機號碼，領取序號後<b>截圖保存</b></span></li>
+      <li><span class="n">2</span><span>前往 <a id="stepUrl" target="_blank" rel="noopener">my.nordaccount.com</a></span></li>
+      <li><span class="n">3</span><span>登入或註冊 Nord 帳戶，輸入序號，即可啟用 1 個月 NordVPN</span></li>
+    </ol>
+  </section>
+  <section class="panel" id="pTerms">
+    <ol class="terms">
+      <li>每個電郵地址及手機號碼只限領取一個序號。</li>
+      <li>序號數量有限，先到先得，派完即止。</li>
+      <li>以相同電郵及手機號碼再次提交，可重新顯示已領取的序號。</li>
+      <li>序號須於 2027 年 6 月 30 日或之前兌換，逾期無效。</li>
+      <li>序號須於 NordVPN 指定網址兌換，兌換及使用須遵守 NordVPN 之條款及細則。</li>
+      <li>序號不可兌換現金、轉讓或轉售。</li>
+      <li>如有任何爭議，LongbridgeAI 保留最終決定權。</li>
+    </ol>
+  </section>
+
+  <footer>© LongbridgeAI</footer>
+</div>
+
+<script>
+  // ====== 設定：部署 Apps Script 後，將網頁應用程式網址貼喺度 ======
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw1hQgUt-kyoYpdSlZPJkBpnuDx7P1mjFeWl-e9lUHMCm48EgAKEjQMzyW4SeIj4X3_/exec';
+  const REDEEM_URL = 'https://my.nordaccount.com/zh-tw/activate/';
+  // ====================================================================
+
+  const DEMO = SCRIPT_URL.startsWith('PASTE');
+  // 連結帶 ?speaker=Elvin 就自動填講者，客人唔使（亦唔可以）改
+  const URL_SPEAKER = (new URLSearchParams(location.search).get('speaker') || '').trim().slice(0, 50);
+  const STORE_KEY = 'nordvpn_claim_v1';
+  const $ = id => document.getElementById(id);
+
+  const ERRORS = {
+    SOLD_OUT: '序號已經全部派完，多謝支持！',
+    ALREADY_CLAIMED: '此電郵地址或手機號碼已領取過序號。如要重新顯示，請輸入領取時所用的電郵及手機號碼。',
+    INVALID_EMAIL: '請輸入有效的電郵地址。',
+    INVALID_PHONE: '請輸入有效的手機號碼。',
+    BUSY: '太多人同時領取，請稍後再試。',
+  };
+
+  if (URL_SPEAKER) {
+    $('fSpeaker').hidden = true;
+    $('fSpeakerFixed').hidden = false;
+    $('speakerName').textContent = URL_SPEAKER;
+  }
+
+  $('redeem').href = REDEEM_URL;
+  $('stepUrl').href = REDEEM_URL;
+  $('rUrl').textContent = REDEEM_URL.replace(/^https?:\/\//, '');
+
+  function maskEmail(e) {
+    const [u, d] = e.split('@');
+    return (u.length <= 2 ? u[0] + '*' : u.slice(0, 2) + '*'.repeat(Math.min(u.length - 2, 5))) + '@' + d;
+  }
+
+  function showResult(r) {
+    $('rCode').textContent = r.code;
+    $('rExpiry').textContent = r.expiry ? '請於 ' + r.expiry + ' 前兌換' : '';
+    $('rEmail').textContent = maskEmail(r.email);
+    $('rTime').textContent = '領取時間：' + r.claimedAt;
+    $('formView').style.display = 'none';
+    $('resultView').classList.add('show');
+    window.scrollTo({ top: 0 });
+  }
+
+  function notice(msg) {
+    $('notice').textContent = msg;
+    $('notice').classList.toggle('show', !!msg);
+  }
+
+  function validate() {
+    const email = $('email').value.trim();
+    const cc = $('cc').value;
+    const num = $('phone').value.replace(/\D/g, '');
+    const okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const okPhone = (cc === '+852' || cc === '+853') ? num.length === 8 : num.length >= 6 && num.length <= 13;
+    const speaker = URL_SPEAKER || $('speaker').value.trim();
+    $('fEmail').classList.toggle('invalid', !okEmail);
+    $('fPhone').classList.toggle('invalid', !okPhone);
+    return okEmail && okPhone ? { email, phone: cc + num, speaker } : null;
+  }
+
+  async function claim(payload) {
+    if (DEMO) {
+      await new Promise(r => setTimeout(r, 600));
+      return { ok: true, code: 'DEMO-' + Math.random().toString(36).slice(2, 10).toUpperCase(), expiry: '2027-06-30', claimedAt: new Date().toLocaleString('zh-HK') };
+    }
+    const res = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(payload) });
+    return res.json();
+  }
+
+  $('form').addEventListener('submit', async e => {
+    e.preventDefault();
+    notice('');
+    const payload = validate();
+    if (!payload) return;
+    const btn = $('submit');
+    btn.disabled = true;
+    btn.textContent = '領取中…';
+    try {
+      const r = await claim(payload);
+      if (r.ok) {
+        const saved = { code: r.code, expiry: r.expiry, email: payload.email, claimedAt: r.claimedAt };
+        try { localStorage.setItem(STORE_KEY, JSON.stringify(saved)); } catch (_) {}
+        showResult(saved);
+      } else {
+        notice(ERRORS[r.error] || '系統繁忙，請稍後再試。');
+      }
+    } catch (err) {
+      notice('網絡連線有問題，請稍後再試。');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '領取序號';
+    }
+  });
+
+  $('copy').addEventListener('click', async () => {
+    const code = $('rCode').textContent;
+    try {
+      await navigator.clipboard.writeText(code);
+    } catch (_) {
+      const r = document.createRange();
+      r.selectNodeContents($('rCode'));
+      getSelection().removeAllRanges();
+      getSelection().addRange(r);
+      document.execCommand('copy');
+    }
+    $('copy').textContent = '已複製 ✓';
+    setTimeout(() => { $('copy').textContent = '複製序號'; }, 1800);
+  });
+
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-selected', x === t));
+    document.querySelectorAll('.panel').forEach(p => p.classList.toggle('show', p.id === t.dataset.panel));
+  }));
+
+  // 同一部手機再開返個 page，直接顯示已領取嘅序號
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
+    if (saved && saved.code) showResult(saved);
+  } catch (_) {}
+
+  // 開 page 時檢查仲有冇序號
+  if (!DEMO) {
+    fetch(SCRIPT_URL + '?action=stock').then(r => r.json()).then(r => {
+      if (r.ok && r.remaining === 0 && !$('resultView').classList.contains('show')) {
+        $('submit').disabled = true;
+        notice(ERRORS.SOLD_OUT);
+      }
+    }).catch(() => {});
+  }
+</script>
+</body>
+</html>
